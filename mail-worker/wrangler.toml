@@ -11,9 +11,9 @@ binding = "db"			#d1数据库绑定名默认不可修改
 database_name = "db"		#d1数据库名字
 database_id = "07a3da5a-35fd-49d5-80b6-537484048fe2"		#d1数据库id
 
-#[[kv_namespaces]]
-#binding = "kv"			#kv绑定名默认不可修改
-#id = ""					#kv数据库id
+[[kv_namespaces]]
+binding = "kv"			#kv绑定名默认不可修改
+id = "11098dfa02b74f8ab06b5068b9dd48aa"					#kv数据库id
 
 #[[r2_buckets]]
 #binding = "r2"			#r2对象存储绑定名默认不可修改
