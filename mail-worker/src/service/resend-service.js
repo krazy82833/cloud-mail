@@ -1,6 +1,5 @@
 import emailService from './email-service';
 import { emailConst } from '../const/entity-const';
-import BizError from '../error/biz-error';
 
 const resendService = {
 
@@ -41,7 +40,9 @@ const resendService = {
 		const emailRow = await emailService.updateEmailStatus(c, params)
 
 		if (!emailRow) {
-			throw new BizError('更新邮件状态记录失败');
+			// 该 Resend 邮件由同账号下其他应用/API Key 发出，本实例没有对应记录，
+			// 属于正常情况：直接跳过并返回 200，避免 Resend 将 webhook 标记为失败并反复重试
+			return
 		}
 
 	}
